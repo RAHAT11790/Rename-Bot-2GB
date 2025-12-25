@@ -4,115 +4,202 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID = os.environ.get("API_ID", "")
-    API_HASH = os.environ.get("API_HASH", "")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
+    API_ID = 25976192  # Your API ID here
+    API_HASH = "8ba23141980539b4896e5adbc4ffd2e2"  # Your API Hash here
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")  # Your Bot Token here
    
     # database config
-    DATABASE_NAME = os.environ.get("DATABASE_NAME","")     
+    DATABASE_NAME = "2gbfile_renam_bot"
     DATABASE_URL = os.environ.get("DATABASE_URL","")
 
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = (os.environ.get("START_PIC", "https://envs.sh/N2f.jpg https://envs.sh/N2a.jpg https://envs.sh/N2O.jpg")).split()
-    ADMIN = int(os.environ.get("ADMIN", ""))
+    START_PIC = ["https://graph.org/file/0b0b88c82bf5bc8b1fe46-4f49971fcaee348ff2.jpg"]  # List of start pictures
+    ADMIN = 6621572366  # Your Admin ID
 
     # channels
-    IS_FSUB = os.environ.get("IS_FSUB", "False").lower() == "true"  # Set "True" For Enable Force Subscribe
-    AUTH_CHANNELS = list(map(int, os.environ.get("AUTH_CHANNELS", "").split())) # Add Multiple Channels iD By Space
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))
-    BIN_CHANNEL = int(os.environ.get("BIN_CHANNEL", ""))
+    IS_FSUB = False  # Set True to enable Force Subscribe
+    AUTH_CHANNELS = []  # Add channel IDs as list like [-100123456789, -100987654321]
+    LOG_CHANNEL = -1003350129581  # Your Log Channel ID
+    BIN_CHANNEL = None  # Your Bin Channel ID (or None if not using)
 
-    # wes response configuration     
-    WEBHOOK = bool(os.environ.get("WEBHOOK", True))
+    # web response configuration     
+    WEBHOOK = bool(os.environ.get("WEBHOOK", True))  # Set True to enable Webhook
 
 
 class Txt(object):
     # part of text configuration
     START_TXT = """{},
 
-𝖴𝗌𝗂𝗇𝗀 𝗍𝗁𝗂𝗌 𝖻𝗈𝗍 𝗒𝗈𝗎 𝖼𝖺𝗇 𝗋𝖾𝗇𝖺𝗆𝖾 𝖺𝗇𝖽 𝖼𝗁𝖺𝗇𝗀𝖾 𝗍𝗁𝗎𝗆𝖻𝗇𝖺𝗂𝗅 𝗈𝖿 𝗒𝗈𝗎𝗋 𝖿𝗂𝗅𝖾𝗌. 𝖠𝗇𝖽 𝗒𝗈𝗎 𝖼𝖺𝗇 𝖺𝗅𝗌𝗈 𝖼𝗈𝗇𝗏𝖾𝗋𝗍 𝗏𝗂𝖽𝖾𝗈 𝗍𝗈 𝖿𝗂𝗅𝖾 𝖺𝗇𝖽 𝖿𝗂𝗅𝖾 𝗍𝗈 𝗏𝗂𝖽𝖾𝗈.
+🔹 *Welcome to Rename Bot* 🔹
 
-<blockquote><b>𝘕𝘰𝘵𝘦 :</b> 𝘈𝘥𝘶𝘭𝘵 𝘊𝘰𝘯𝘵𝘦𝘯𝘵 𝘪𝘴 𝘚𝘛𝘙𝘐𝘊𝘛𝘓𝘠 𝘱𝘳𝘰𝘩𝘪𝘣𝘪𝘵𝘦𝘥 𝘉𝘢𝘯 𝘸𝘪𝘭𝘭 𝘣𝘦 𝘱𝘦𝘳𝘮𝘢𝘯𝘦𝘯𝘵.</blockquote>"""
+Using this bot you can rename and change thumbnail of your files. You can also convert video to file and file to video.
 
-    ABOUT_TXT = ABOUT_TXT = """<b>‣ ᴍʏ ɴᴀᴍᴇ : <a href='https://youtube.com/@techifybots'>ᴢᴏʀᴏ ʀᴇɴᴀᴍᴇ ʙᴏᴛ</a>
-‣ ʟɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a> 
-‣ ᴅᴀᴛᴀʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏᴅʙ</a>
-‣ ʟᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a> 
-‣ ʙᴏᴛ sᴇʀᴠᴇʀ : <a href='https://www.koyeb.com/'>ᴋᴏʏᴇʙ</a>
-‣ ᴄʀᴇᴀᴛᴇᴅ ʙʏ : <a href='https://telegram.me/callownerbot'>ʀᴀʜᴜʟ</a></b>"""
+📌 **Note:** Adult Content is STRICTLY prohibited. Ban will be permanent.
 
+━━━━━━━━━━━━━━━━━━━━━━━━
+📁 **Features:**
+✓ Rename files with custom names
+✓ Set custom thumbnails
+✓ Convert video to file & file to video
+✓ Fast & efficient
+✓ User-friendly interface
+━━━━━━━━━━━━━━━━━━━━━━━━
 
-    HELP_TXT = """
-<b>ʀᴇɴᴀᴍᴇ ʙᴏᴛ ɪꜱ ᴀ ʜᴀɴᴅʏ ᴛᴏᴏʟ ᴛʜᴀᴛ ʜᴇʟᴘꜱ ʏᴏᴜ ʀᴇɴᴀᴍᴇ ᴀɴᴅ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ꜰɪʟᴇꜱ ᴇꜰꜰᴏʀᴛʟᴇꜱꜱʟʏ.
+🚀 *Start by sending me any file!*"""
 
-➻ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ꜰᴏʀ ɢᴇᴛᴛɪɴɢ ᴍᴏʀᴇ ɪɴꜰᴏ.</b>
-"""
+    ABOUT_TXT = """🤖 **Bot Information**
 
-    THUMBNAIL_TXT = """<b>» <u>ᴛᴏ ꜱᴇᴛ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ</u></b>
-    
-➲ ꜱᴇɴᴅ ᴀɴʏ ᴘʜᴏᴛᴏ ᴛᴏ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ꜱᴇᴛ ɪᴛ ᴀꜱ ᴀ ᴛʜᴜᴍʙɴᴀɪʟ.
-➲ /delthumb: ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴛʜᴜᴍʙɴᴀɪʟ.
-➲ /viewthumb: ᴜꜱᴇ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ᴠɪᴇᴡ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴛʜᴜᴍʙɴᴀɪʟ.
+┌───────────────┐
+│ ✨ **Bot Name** │ : [Rename Bot](https://t.me/rs_woner)
+├───────────────┤
+│ 📚 **Library**  │ : [Pyrogram](https://docs.pyrogram.org/)
+├───────────────┤
+│ 🗄️ **Database** │ : [MongoDB](https://www.mongodb.com/)
+├───────────────┤
+│ 💻 **Language** │ : [Python 3](https://www.python.org/)
+├───────────────┤
+│ 🌐 **Server**   │ : [Koyeb](https://www.koyeb.com/)
+├───────────────┤
+│ 👨‍💻 **Creator**  │ : [RS](https://telegram.me/rs_woner)
+└───────────────┘
 
-<b>ɴᴏᴛᴇ :</b> ɪꜰ ɴᴏ ᴛʜᴜᴍʙɴᴀɪʟ ꜱᴀᴠᴇᴅ ɪɴ ʙᴏᴛ ᴛʜᴇɴ, ɪᴛ ᴡɪʟʟ ᴜꜱᴇ ᴛʜᴜᴍʙɴᴀɪʟ ᴏꜰ ᴛʜᴇ ᴏʀɪɢɪɴɪᴀʟ ꜰɪʟᴇ ᴛᴏ ꜱᴇᴛ ɪɴ ʀᴇɴᴀᴍᴇᴅ ꜰɪʟᴇ"""
+💫 *A powerful file management bot for Telegram*"""
 
-    CAPTION_TXT = """<b>» <u>ᴛᴏ ꜱᴇᴛ ᴄᴜꜱᴛᴏᴍ ᴄᴀᴘᴛɪᴏɴ ᴀɴᴅ ᴍᴇᴅɪᴀ ᴛʏᴘᴇ</u></b>
-    
-<b>ᴠᴀʀɪᴀʙʟᴇꜱ :</b>         
-ꜱɪᴢᴇ: {filesize}
-ᴅᴜʀᴀᴛɪᴏɴ: {duration}
-ꜰɪʟᴇɴᴀᴍᴇ: {filename}
+    HELP_TXT = """📚 **Help Guide**
 
-➲ /set_caption: ᴛᴏ ꜱᴇᴛ ᴀ ᴄᴜꜱᴛᴏᴍ ᴄᴀᴘᴛɪᴏɴ.
-➲ /see_caption: ᴛᴏ ᴠɪᴇᴡ ʏᴏᴜʀ ᴄᴜꜱᴛᴏᴍ ᴄᴀᴘᴛɪᴏɴ.
-➲ /del_caption: ᴛᴏ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴄᴜꜱᴛᴏᴍ ᴄᴀᴘᴛɪᴏɴ.
+**Rename Bot** is a handy tool that helps you rename and manage your files effortlessly.
 
-» ᴇx: /set_caption ꜰɪʟᴇ ɴᴀᴍᴇ: {filename}
-"""
+━━━━━━━━━━━━━━━━━━━━━━━━
 
-    PREFIX = """<b>» <u>ᴛᴏ ꜱᴇᴛ ᴄᴜꜱᴛᴏᴍ ᴘʀᴇꜰɪx</u></b>
+🔧 **Available Commands:**
 
-➲ /set_prefix: ᴛᴏ ꜱᴇᴛ ᴀ ᴄᴜꜱᴛᴏᴍ ᴘʀᴇꜰɪx.
-➲ /see_prefix: ᴛᴏ ᴠɪᴇᴡ ʏᴏᴜʀ ᴄᴜꜱᴛᴏᴍ ᴘʀᴇꜰɪx.
-➲ /del_prefix: ᴛᴏ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴄᴜꜱᴛᴏᴍ ᴘʀᴇꜰɪx.
+┌─────────────────────┐
+│ 📋 /start - Start bot
+│ 📄 /help - This menu
+│ ℹ️ /about - Bot info
+│ 🖼️ /thumbnail - Thumbnail settings
+│ 📝 /caption - Caption settings
+│ 🔤 /prefix - Prefix settings
+│ 🔚 /suffix - Suffix settings
+│ 📊 /metadata - Metadata settings
+│ 💰 /donate - Support bot
+└─────────────────────┘
 
-» ᴇx: `/set_prefix @TechifyBots`
-"""
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 **How to use:**
+1. Send any file
+2. Enter new name
+3. Get renamed file!
 
-    SUFFIX = """<b>» <u>ᴛᴏ ꜱᴇᴛ ᴄᴜꜱᴛᴏᴍ sᴜꜰꜰɪx</u></b>
+📬 *Need more help? Contact @RS_WONER*"""
 
-➲ /set_suffix: ᴛᴏ ꜱᴇᴛ ᴀ ᴄᴜꜱᴛᴏᴍ sᴜꜰꜰɪx.
-➲ /see_suffix: ᴛᴏ ᴠɪᴇᴡ ʏᴏᴜʀ ᴄᴜꜱᴛᴏᴍ sᴜꜰꜰɪx.
-➲ /del_suffix: ᴛᴏ ᴅᴇʟᴇᴛᴇ ʏᴏᴜʀ ᴄᴜꜱᴛᴏᴍ sᴜꜰꜰɪx.
+    THUMBNAIL_TXT = """🖼️ **Thumbnail Settings**
 
-» ᴇx: `/set_suffix @TechifyBots`
-"""
+**To set custom thumbnail:**
 
-    PROGRESS_BAR = """\n
- <b>🔗 Size :</b> {1} | {2}
-️ <b>⏳️ Done :</b> {0}%
- <b>🚀 Speed :</b> {3}/s
-️ <b>⏰️ ETA :</b> {4}
-"""
+✅ **Set Thumbnail:**
+Send any photo to automatically set it as thumbnail.
 
-    DONATE_TXT = """
-<blockquote>❤️‍🔥 𝐓𝐡𝐚𝐧𝐤𝐬 𝐟𝐨𝐫 𝐬𝐡𝐨𝐰𝐢𝐧𝐠 𝐢𝐧𝐭𝐞𝐫𝐞𝐬𝐭 𝐢𝐧 𝐃𝐨𝐧𝐚𝐭𝐢𝐨𝐧</blockquote>
+✅ **Delete Thumbnail:**
+Use `/delthumb` to delete your thumbnail.
 
-<b><i>💞  ɪꜰ ʏᴏᴜ ʟɪᴋᴇ ᴏᴜʀ ʙᴏᴛ ꜰᴇᴇʟ ꜰʀᴇᴇ ᴛᴏ ᴅᴏɴᴀᴛᴇ ᴀɴʏ ᴀᴍᴏᴜɴᴛ ₹𝟷𝟶, ₹𝟸𝟶, ₹𝟻𝟶, ₹𝟷𝟶𝟶, ᴇᴛᴄ.</i></b>
+✅ **View Thumbnail:**
+Use `/viewthumb` to view your current thumbnail.
 
-❣️ 𝐷𝑜𝑛𝑎𝑡𝑖𝑜𝑛𝑠 𝑎𝑟𝑒 𝑟𝑒𝑎𝑙𝑙𝑦 𝑎𝑝𝑝𝑟𝑒𝑐𝑖𝑎𝑡𝑒𝑑 𝑖𝑡 ℎ𝑒𝑙𝑝𝑠 𝑖𝑛 𝑏𝑜𝑡 𝑑𝑒𝑣𝑒𝑙𝑜𝑝𝑚𝑒𝑛𝑡
+━━━━━━━━━━━━━━━━━━━━━━━━
+📌 **Note:** If no thumbnail saved in bot, it will use thumbnail of the original file to set in renamed file."""
 
-💖 𝐔𝐏𝐈 𝐈𝐃 : `RahulDhankhar@UPI`
+    CAPTION_TXT = """📝 **Caption Settings**
 
-💗 𝐐𝐑 𝐂𝐨𝐝𝐞 : <b><a href='https://TechifyBots.github.io/PayWeb'>𝖢𝗅𝗂𝖼𝗄 𝖧𝖾𝗋𝖾</a></b>
-"""
+**To set custom caption and media type:**
 
-    SEND_METADATA = """<b>» <u>ᴛᴏ ꜱᴇᴛ ᴄᴜꜱᴛᴏᴍ ᴍᴇᴛᴀᴅᴀᴛᴀ</u></b>
+📌 **Available Variables:**
+• `{filesize}` - File size
+• `{duration}` - Duration (for media)
+• `{filename}` - File name
 
-➲ /metadata: ᴛᴏ ꜱᴇᴛ ᴀ ᴄᴜꜱᴛᴏᴍ ᴍᴇᴛᴀᴅᴀᴛᴀ
+━━━━━━━━━━━━━━━━━━━━━━━━
 
-ᴀꜰᴛᴇʀ ᴜsɪɴɢ ᴄᴍᴅ sᴇɴᴅ ᴀɴʏ ᴛᴇxᴛ ɪ ᴡɪʟʟ sᴀᴠᴇ ɪᴛ ᴀs ʏᴏᴜʀ ᴍᴇᴛᴀᴅᴀᴛᴀ
+🔧 **Commands:**
+• `/set_caption` - Set custom caption
+• `/see_caption` - View custom caption
+• `/del_caption` - Delete custom caption
 
-» ᴇx: `@TechifyBots`
-"""
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 **Example:**
+`/set_caption File Name: {filename}
+Size: {filesize}
+Duration: {duration}`"""
+
+    PREFIX = """🔤 **Prefix Settings**
+
+**To set custom prefix:**
+
+🔧 **Commands:**
+• `/set_prefix` - Set custom prefix
+• `/see_prefix` - View custom prefix
+• `/del_prefix` - Delete custom prefix
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 **Example:**
+`/set_prefix @RS_WONER_`"""
+
+    SUFFIX = """🔚 **Suffix Settings**
+
+**To set custom suffix:**
+
+🔧 **Commands:**
+• `/set_suffix` - Set custom suffix
+• `/see_suffix` - View custom suffix
+• `/del_suffix` - Delete custom suffix
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 **Example:**
+`/set_suffix _by_RS`"""
+
+    PROGRESS_BAR = """━━━━━━━━━━━━━━━━━━━━━━━━
+📊 **Progress:** {0}%
+📦 **Size:** {1} | {2}
+⚡ **Speed:** {3}/s
+⏳ **ETA:** {4}
+━━━━━━━━━━━━━━━━━━━━━━━━"""
+
+    DONATE_TXT = """❤️ **Support & Donation**
+
+Thank you for showing interest in supporting our bot development!
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+💝 **Why donate?**
+Donations help in:
+• Server maintenance
+• Feature development
+• Bug fixes
+• Continuous improvements
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+
+💰 **Payment Methods:**
+• **bKash:** `+8801957340327`
+• **Nagad:** `+8801957340327`
+• **Rocket:** `+8801957340327`
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+🤝 *Your support keeps this bot running!*"""
+
+    SEND_METADATA = """📋 **Metadata Settings**
+
+**To set custom metadata:**
+
+🔧 **Command:**
+• `/metadata` - Set custom metadata
+
+━━━━━━━━━━━━━━━━━━━━━━━━
+💡 **How to use:**
+1. Send `/metadata`
+2. Send any text
+3. It will be saved as your metadata
+
+**Example:**
+`@RS_WONER | Telegram Rename Bot`"""
